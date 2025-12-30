@@ -20,11 +20,12 @@ pipeline {
                 echo 'Stage 1: Cloning Repository from GitHub'
                 echo '=========================================='
                 
-                // Clean workspace before cloning
-                cleanWs()
-                
-                // Clone the repository (configured in Jenkins job)
-                checkout scm
+                // Clean workspace and clone repository explicitly
+                bat '''
+                    if exist ".git" rmdir /s /q .git
+                    if exist "app.py" del /q *.py
+                    git clone https://github.com/moizarain/finalexam.git .
+                '''
                 
                 echo 'Repository cloned successfully!'
             }
