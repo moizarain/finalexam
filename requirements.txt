@@ -1,0 +1,10 @@
+# Flask Web Framework
+Flask==2.3.3
+Werkzeug==2.3.7
+
+# Testing
+pytest==7.4.3
+pytest-cov==4.1.0
+
+# Additional utilities
+python-dotenv==1.0.0
